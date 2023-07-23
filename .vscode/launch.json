@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Spring Boot-ApiMoviesApplication<api-movies>",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"mainClass": "com.rabis.apimovies.ApiMoviesApplication",
+			"projectName": "api-movies",
+			"args": "",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}

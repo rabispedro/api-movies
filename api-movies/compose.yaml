@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  postgres-dev:
+    image: 'postgres:15-alpine'
+    restart: 'always'
+    environment:
+      - 'POSTGRES_DB=apimovies_dev'
+      - 'POSTGRES_USER=dev'
+      - 'POSTGRES_PASSWORD=API_movies@123'
+    volumes:
+      - '/postgres-dev/data:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
