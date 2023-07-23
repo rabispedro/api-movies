@@ -7,10 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rabis.apimovies.dtos.GameDto;
 import com.rabis.apimovies.dtos.GameListDto;
+import com.rabis.apimovies.dtos.ReplacementDto;
 import com.rabis.apimovies.services.GameListService;
 import com.rabis.apimovies.services.GameService;
 
@@ -48,4 +51,11 @@ public class GameListController {
 
 		return ResponseEntity.ok(games);
 	}
+
+	@PostMapping(path = "/{id}/placement")
+	public void updateGameListPlacement(@PathVariable Long id, @RequestBody ReplacementDto replacementDto) {
+		this.gameListService.updateGameListPlacement(id, replacementDto.sourceIndex(), replacementDto.destinationIndex());
+		return;
+	}
 }
+
